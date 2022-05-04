@@ -25,3 +25,14 @@ this is an interactive comments-reply component section where you can rate comme
 - As a user, I should be able to edit my comments/replys and update them.
 - As a user, I should be able to to delete my comments/replys.
 - As a user, I should be able to reply to other people's comments.
+
+## 📍 How to install the project on your local machine:
+
+![clone](https://user-images.githubusercontent.com/77394697/166664655-6a4bf258-4ffe-4de1-a58e-19c71b472a2e.PNG)
+
+- You can click the *code* drop-down menu as illustrated in the picture above and copy the link to clone the repo.
+- Now go to your terminal and type: `git clone <the link here>` and then the repo will be cloned to your local machine.
+- By now you have to open your IDE -I recommend VSCode- and open the project.
+- to open a live page from your local machine project, you can download the `live Server` extension. This's a [link](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer) to the extension.
+- Now right click with your mouse and choose: Open with live server.
+- Happy Coding!🤞
