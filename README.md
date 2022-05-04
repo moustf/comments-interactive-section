@@ -36,3 +36,25 @@ this is an interactive comments-reply component section where you can rate comme
 - to open a live page from your local machine project, you can download the `live Server` extension. This's a [link](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer) to the extension.
 - Now right click with your mouse and choose: Open with live server.
 - Happy Coding!🤞
+
+## 📍 Technologies that I used:
+
+➙ *HTML5*.
+➙ *CSS3*.
+➙ *javaScript*.
+➙ *Local Storage*.
+➙ *Git and GitHub*.
+➙ *SASS Preprocessor*
+
+## 📍 Design Images:
+
+![desktop-design](https://user-images.githubusercontent.com/77394697/166665224-4e20dbf8-4bd0-409d-912a-89dcb87cc394.jpg)
+![active-states](https://user-images.githubusercontent.com/77394697/166665381-95e629c5-f17d-446b-9bde-15a2468454b5.jpg)
+![desktop-modal](https://user-images.githubusercontent.com/77394697/166665432-ac8cf06d-853b-44ba-b29e-9c5e9cbd9bf4.jpg)
+![mobile-design](https://user-images.githubusercontent.com/77394697/166665417-4751a0ab-80f0-4844-a1e7-d7e7570cc6c6.jpg)
+![mobile-modal](https://user-images.githubusercontent.com/77394697/166665426-1fc13e39-7726-4bf5-a7cb-eda8503ab438.jpg)
+
+## 📍 Challenge link from [HERE](https://www.frontendmentor.io/challenges/interactive-comments-section-iG1RugEG9).
+.
+
+## 💡 Coded by: [Mustafa Salem](https://github.com/moustf).
