@@ -11,16 +11,28 @@
       rel="stylesheet"
     />
     <!-- The font from Google Fonts Library. -->
+    <link rel="stylesheet" href="./CSS/main.css" />
+    <!-- The main style sheet -->
     <title>Mustafa Salem | Interactive comments section</title>
   </head>
   <body>
     <div class="container">
       <section class="comments-generator">
         <form>
-          <img src="./images/avatars/image-juliusomo.png" alt="user image" />
+          <img
+            class="user-image-cg"
+            src="./images/avatars/image-juliusomo.png"
+            alt="user image"
+          />
           <label for="comments" style="display: none">Comments</label>
-          <input type="text" name="comments" id="comments" maxlength="240" />
-          <input type="submit" value="Send" />
+          <input
+            type="text"
+            name="comments"
+            id="comments"
+            placeholder="Add a comment ..."
+            maxlength="240"
+          />
+          <input id="send-btn" type="submit" value="Send" />
         </form>
       </section>
       <main class="comments-reply">
