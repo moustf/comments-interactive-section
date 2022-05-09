@@ -8,7 +8,7 @@ const replyTwoReplys = document.querySelector(".reply-two .replys");
 fetch("../data.json")
   .then((data) => data.json())
   .then((info) => {
-    // ! Reply One stuff START.
+    // ! Comment One stuff START.
 
     // ? The div container for the score stuff and the head div.
     let mainCont = document.createElement("div");
@@ -52,7 +52,7 @@ fetch("../data.json")
 
     // ? Added the name of the user.
     let userOneName = document.createElement("p");
-    userOneName.textContent = info.comments[0].username;
+    userOneName.textContent = info.comments[0].user.username;
     userOneName.className = "user-one-name";
 
     // ? Added the last activity timing.
@@ -96,9 +96,9 @@ fetch("../data.json")
     // ? Added the comment paragraph to the replyOneMain.
     replyOneMain.appendChild(commentP);
 
-    // ! Reply One stuff END.
+    // ! Comment One stuff END.
 
-    // ! Reply two stuff START.
+    // ! Comment two stuff START.
 
     // ? The div container for the score stuff and the head div.
     let mainCont2 = document.createElement("div");
@@ -142,7 +142,7 @@ fetch("../data.json")
 
     // ? Added the name of the user.
     let userOneName2 = document.createElement("p");
-    userOneName2.textContent = info.comments[1].username;
+    userOneName2.textContent = info.comments[1].user.username;
     userOneName2.className = "user-one-name";
 
     // ? Added the last activity timing.
@@ -186,5 +186,95 @@ fetch("../data.json")
     // ? Added the comment paragraph to the replyOneMain.
     replyTwoMain.appendChild(commentP2);
 
-    // ! Reply two stuff END.
+    // ! Comment two stuff END.
+
+    // ! Comment two reply one stuff START.
+
+    // ? The div container for the score stuff and the head div.
+    let mainCont3 = document.createElement("div");
+    mainCont3.className = "score-head-cont";
+
+    // ? The div of the score stuff.
+    let scoreDiv3 = document.createElement("div");
+    scoreDiv3.className = "score-div";
+
+    // ? Plus image
+    let plusImage3 = document.createElement("img");
+    plusImage3.src = "../images/icon-plus.svg";
+    plusImage3.className = "plus-image";
+
+    // ? The score number between the plus and minus images.
+    let number3 = document.createElement("p");
+    number3.textContent = info.comments[1].replies[0].score;
+    number3.className = "score-number";
+
+    // ? Minus image
+    let minusImage3 = document.createElement("img");
+    minusImage3.src = "../images/icon-minus.svg";
+    minusImage3.className = "minus-image";
+
+    // ? Adding the elements to the div.
+    scoreDiv3.appendChild(plusImage3);
+    scoreDiv3.appendChild(number3);
+    scoreDiv3.appendChild(minusImage3);
+
+    // ? Adding the div to the mainCont div.
+    mainCont3.appendChild(scoreDiv3);
+
+    // ? Creating the div for the header of the reply.
+    let replyHeadDiv3 = document.createElement("div");
+    replyHeadDiv3.className = "reply-head-div";
+
+    // ? The picture of the user
+    let userImage3 = document.createElement("img");
+    userImage3.src = info.comments[1].replies[0].user.image.png;
+    userImage3.className = "user-icon";
+
+    // ? Added the name of the user.
+    let userOneName3 = document.createElement("p");
+    userOneName3.textContent = info.comments[1].replies[0].user.username;
+    userOneName3.className = "user-one-name";
+
+    // ? Added the last activity timing.
+    let userOneLastAct3 = document.createElement("span");
+    userOneLastAct3.textContent = info.comments[1].replies[0].createdAt;
+    userOneLastAct3.className = "user-one-publish";
+
+    // ? Added the div that will hold the reply icon and text.
+    let replyCont3 = document.createElement("div");
+    replyCont3.className = "reply-cont";
+
+    // ? Added the reply icon.
+    let replyIcon3 = document.createElement("img");
+    replyIcon3.src = "../images/icon-reply.svg";
+
+    // ? Adding the reply text
+    let replySpan3 = document.createElement("span");
+    replySpan3.textContent = "Reply";
+
+    // ? Pushing the elements inside the reply div.
+    replyCont3.appendChild(replyIcon3);
+    replyCont3.appendChild(replySpan3);
+
+    // ? Pushing elements inside the replyHeadDiv.
+    replyHeadDiv3.appendChild(userImage3);
+    replyHeadDiv3.appendChild(userOneName3);
+    replyHeadDiv3.appendChild(userOneLastAct3);
+    replyHeadDiv3.appendChild(replyCont3);
+
+    // ? Adding the div to the mainCont div.
+    mainCont3.appendChild(replyHeadDiv3);
+
+    // ? Adding the mainCont to the mainReply div.
+    replyTwoReplys.appendChild(mainCont3);
+
+    // ? Creating the comment paragraph element.
+    let commentP3 = document.createElement("p");
+    commentP3.className = "comment-text";
+    commentP3.textContent = info.comments[1].replies[0].content;
+
+    // ? Added the comment paragraph to the replyOneMain.
+    replyTwoReplys.appendChild(commentP3);
+
+    // ! Comment two reply one stuff End.
   });
