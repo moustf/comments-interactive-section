@@ -6,10 +6,99 @@
 
 /* Starting the designs for mobile screens */
 
+// ? Mixins::after
+
+@mixin outerReplyMobile {
+  display: flex;
+  margin: 1rem 0.5rem;
+}
+
+@mixin mainMobile {
+  width: 96%;
+  height: 30vh;
+  padding: 1rem;
+  display: grid;
+  grid-template-columns: auto repeat(3, 1fr);
+  grid-template-rows: auto 1fr auto;
+  row-gap: 0.5rem;
+  background-color: #{$white};
+}
+
+@mixin soreContMobile {
+  grid-area: 3 / 1 / 4 / 3;
+  width: 7rem;
+  height: 2rem;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #{$light-Gray};
+  padding: 5px;
+  border-radius: 0.5rem;
+}
+
+@mixin scoreImageMobile {
+  width: 16px;
+  cursor: pointer;
+}
+
+@mixin scoreTextMobile {
+  font-size: large;
+  font-weight: 500;
+  color: #{$moderate-Blue};
+}
+
+@mixin userImageMobile {
+  grid-area: 1 / 1 / 2 / 2;
+  width: 32px;
+}
+
+@mixin usernameMobile {
+  grid-area: 1 / 2 / 2 / 3;
+  margin-left: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin createdAtMobile {
+  grid-area: 1 / 3 / 2 / 4;
+  margin-left: 0.8rem;
+  font-size: small;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #{$grayish-Blue};
+}
+
+@mixin reply-iconMobile {
+  grid-area: 3 / 4 / 4 / 5;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 75px;
+  cursor: pointer;
+}
+
+@mixin commentsTextMobile {
+  width: 100%;
+  grid-area: 2 / 1 / 3 / 5;
+  margin-top: 1rem;
+  font-size: 0.95rem;
+  color: #{$grayish-Blue};
+  letter-spacing: 0.3px;
+  line-height: 1.3rem;
+}
+
+// ? Mobile screens styles START:
+
+body {
+  font-family: "Rubik", sans-serif;
+}
+
 .container {
   width: 100%;
   height: 100vh;
-  background-color: #{$very-light-gray};
+  background-color: #{$very-Light-Gray};
   display: flex;
   justify-content: center;
   align-items: center;
@@ -38,8 +127,8 @@
         width: 90%;
         height: 12vh;
         grid-area: 1 / 1 / 2 / 5;
-        border-color: #{$light-gray};
-        outline-color: #{$light-gray};
+        border-color: #{$light-Gray};
+        outline-color: #{$light-Gray};
         border-radius: 1rem;
         background-color: transparent;
         font-size: larger;
@@ -53,7 +142,7 @@
       }
       #send-btn {
         grid-area: 2 / 4 / 4 / 5;
-        background-color: #{$moderate-blue};
+        background-color: #{$moderate-Blue};
         color: #{$white};
         height: 6vh;
         width: 100%;
@@ -66,11 +155,133 @@
   }
   .comments-reply {
     width: 95%;
-    height: 75vh;
+    height: 71vh;
     overflow: auto;
     position: fixed;
     top: 0;
-    left: 2.5%;
+    left: 4.5%;
+    .reply-one {
+      @include outerReplyMobile();
+      .main {
+        @include mainMobile();
+        .score-cont {
+          @include soreContMobile();
+          img {
+            @include scoreImageMobile();
+          }
+          .score {
+            @include scoreTextMobile();
+          }
+        }
+        .user-image {
+          @include userImageMobile();
+        }
+        .username {
+          @include usernameMobile();
+        }
+        .created-at {
+          @include createdAtMobile();
+        }
+        .reply-icon {
+          @include reply-iconMobile();
+        }
+      }
+      .comment-text {
+        @include commentsTextMobile();
+      }
+    }
+
+    .reply-two {
+      margin: 1rem 0.5rem;
+      .main {
+        @include mainMobile();
+        .score-cont {
+          @include soreContMobile();
+          img {
+            @include scoreImageMobile();
+          }
+          .score {
+            @include scoreTextMobile();
+          }
+        }
+        .user-image {
+          @include userImageMobile();
+        }
+        .username {
+          @include usernameMobile();
+        }
+        .created-at {
+          @include createdAtMobile();
+        }
+        .reply-icon {
+          @include reply-iconMobile();
+        }
+        .comment-text {
+          @include commentsTextMobile();
+        }
+      }
+      .replies {
+        border-left: 5px solid #{$light-Gray};
+        padding-left: 0.5rem;
+        margin: 1rem 0.5rem;
+        .reply-one {
+          @include mainMobile();
+          .score-cont {
+            @include soreContMobile();
+            img {
+              @include scoreImageMobile();
+            }
+            .score {
+              @include scoreTextMobile();
+            }
+          }
+          .user-image {
+            @include userImageMobile();
+          }
+          .username {
+            @include usernameMobile();
+          }
+          .created-at {
+            @include createdAtMobile();
+            margin-left: 0.4rem;
+            width: 4.2rem;
+          }
+          .reply-icon {
+            @include reply-iconMobile();
+          }
+          .comment-text {
+            @include commentsTextMobile();
+          }
+        }
+        .reply-two {
+          @include mainMobile();
+          .score-cont {
+            @include soreContMobile();
+            img {
+              @include scoreImageMobile();
+            }
+            .score {
+              @include scoreTextMobile();
+            }
+          }
+          .user-image {
+            @include userImageMobile();
+          }
+          .username {
+            @include usernameMobile();
+          }
+          .created-at {
+            @include createdAtMobile();
+          }
+          .reply-icon {
+            @include reply-iconMobile();
+          }
+          .comment-text {
+            @include commentsTextMobile();
+          }
+        }
+      }
+    }
   }
 }
 
