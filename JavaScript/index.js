@@ -156,3 +156,10 @@ function addToPage(isComment) {
     });
 }
 
+function getCurrentDate() {
+  let currentDate = new Date();
+  let days = String(currentDate.getDate()).padStart(2, "0");
+  let months = String(currentDate.getMonth() + 1).padStart(2, "0"); // January is 0;
+  let years = String(currentDate.getFullYear());
+  return `${days}/${months}/${years}`;
+}
