@@ -1,6 +1,6 @@
 * {
   -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
   scroll-behavior: smooth;
@@ -23,11 +23,11 @@ body {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
 .container .comments-generator {
@@ -47,9 +47,9 @@ body {
   display: -ms-grid;
   display: grid;
   -ms-grid-rows: 1fr auto;
-      grid-template-rows: 1fr auto;
+  grid-template-rows: 1fr auto;
   -ms-grid-columns: auto auto auto 100px;
-      grid-template-columns: auto auto auto 100px;
+  grid-template-columns: auto auto auto 100px;
   padding: 1rem;
 }
 
@@ -61,7 +61,7 @@ body {
   grid-area: 2 / 1 / 3 / 2;
   width: 48px;
   -webkit-transform: translateY(0.7rem);
-          transform: translateY(0.7rem);
+  transform: translateY(0.7rem);
 }
 
 .container .comments-generator form #comments {
@@ -78,7 +78,7 @@ body {
   background-color: transparent;
   font-size: larger;
   -webkit-transform: translateX(7%);
-          transform: translateX(7%);
+  transform: translateX(7%);
   padding: 1rem;
   margin-left: 1px;
 }
@@ -128,10 +128,10 @@ body {
   padding: 1rem;
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: auto (1fr)[3];
-      grid-template-columns: auto repeat(3, 1fr);
+  -ms-grid-columns: auto (1fr) [3];
+  grid-template-columns: auto repeat(3, 1fr);
   -ms-grid-rows: auto 1fr auto;
-      grid-template-rows: auto 1fr auto;
+  grid-template-rows: auto 1fr auto;
   row-gap: 0.5rem;
   background-color: white;
   border-radius: 0.5rem;
@@ -149,10 +149,10 @@ body {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-pack: distribute;
-      justify-content: space-around;
+  justify-content: space-around;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   background-color: #eaecf1;
   padding: 5px;
   border-radius: 0.5rem;
@@ -189,11 +189,11 @@ body {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
 .container .comments-reply .reply-one .main .created-at {
@@ -208,11 +208,11 @@ body {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   color: #67727e;
 }
 
@@ -226,10 +226,10 @@ body {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-pack: distribute;
-      justify-content: space-around;
+  justify-content: space-around;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   width: 75px;
   cursor: pointer;
 }
@@ -258,10 +258,10 @@ body {
   padding: 1rem;
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: auto (1fr)[3];
-      grid-template-columns: auto repeat(3, 1fr);
+  -ms-grid-columns: auto (1fr) [3];
+  grid-template-columns: auto repeat(3, 1fr);
   -ms-grid-rows: auto 1fr auto;
-      grid-template-rows: auto 1fr auto;
+  grid-template-rows: auto 1fr auto;
   row-gap: 0.5rem;
   background-color: white;
   border-radius: 0.5rem;
@@ -279,10 +279,10 @@ body {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-pack: distribute;
-      justify-content: space-around;
+  justify-content: space-around;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   background-color: #eaecf1;
   padding: 5px;
   border-radius: 0.5rem;
@@ -319,11 +319,11 @@ body {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
 .container .comments-reply .reply-two .main .created-at {
@@ -338,11 +338,11 @@ body {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   color: #67727e;
 }
 
@@ -356,10 +356,10 @@ body {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-pack: distribute;
-      justify-content: space-around;
+  justify-content: space-around;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   width: 75px;
   cursor: pointer;
 }
@@ -390,10 +390,10 @@ body {
   padding: 1rem;
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: auto (1fr)[3];
-      grid-template-columns: auto repeat(3, 1fr);
+  -ms-grid-columns: auto (1fr) [3];
+  grid-template-columns: auto repeat(3, 1fr);
   -ms-grid-rows: auto 1fr auto;
-      grid-template-rows: auto 1fr auto;
+  grid-template-rows: auto 1fr auto;
   row-gap: 0.5rem;
   background-color: white;
   border-radius: 0.5rem;
@@ -411,10 +411,10 @@ body {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-pack: distribute;
-      justify-content: space-around;
+  justify-content: space-around;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   background-color: #eaecf1;
   padding: 5px;
   border-radius: 0.5rem;
@@ -451,11 +451,11 @@ body {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
 .container .comments-reply .reply-two .replies .reply-one .created-at {
@@ -470,11 +470,11 @@ body {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   color: #67727e;
   margin-left: 0.4rem;
   width: 4.2rem;
@@ -490,10 +490,10 @@ body {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-pack: distribute;
-      justify-content: space-around;
+  justify-content: space-around;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   width: 75px;
   cursor: pointer;
 }
@@ -518,10 +518,10 @@ body {
   padding: 1rem;
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: auto (1fr)[3];
-      grid-template-columns: auto repeat(3, 1fr);
+  -ms-grid-columns: auto (1fr) [3];
+  grid-template-columns: auto repeat(3, 1fr);
   -ms-grid-rows: auto 1fr auto;
-      grid-template-rows: auto 1fr auto;
+  grid-template-rows: auto 1fr auto;
   row-gap: 0.5rem;
   background-color: white;
   border-radius: 0.5rem;
@@ -539,10 +539,10 @@ body {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-pack: distribute;
-      justify-content: space-around;
+  justify-content: space-around;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   background-color: #eaecf1;
   padding: 5px;
   border-radius: 0.5rem;
@@ -579,11 +579,11 @@ body {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
 .container .comments-reply .reply-two .replies .reply-two .created-at {
@@ -598,11 +598,11 @@ body {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   color: #67727e;
 }
 
@@ -616,15 +616,148 @@ body {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-pack: distribute;
-      justify-content: space-around;
+  justify-content: space-around;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   width: 75px;
   cursor: pointer;
 }
 
 .container .comments-reply .reply-two .replies .reply-two .comment-text {
+  width: 100%;
+  -ms-grid-row: 2;
+  -ms-grid-row-span: 1;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 4;
+  grid-area: 2 / 1 / 3 / 5;
+  margin-top: 1rem;
+  font-size: 0.95rem;
+  color: #67727e;
+  letter-spacing: 0.3px;
+  line-height: 1.3rem;
+}
+
+.container .comments-reply .reply {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 1rem 0.5rem;
+}
+
+.container .comments-reply .reply .main {
+  width: 96%;
+  height: 30vh;
+  padding: 1rem;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: auto (1fr) [3];
+  grid-template-columns: auto repeat(3, 1fr);
+  -ms-grid-rows: auto 1fr auto;
+  grid-template-rows: auto 1fr auto;
+  row-gap: 0.5rem;
+  background-color: white;
+  border-radius: 0.5rem;
+}
+
+.container .comments-reply .reply .main .score-cont {
+  -ms-grid-row: 3;
+  -ms-grid-row-span: 1;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-area: 3 / 1 / 4 / 3;
+  width: 7rem;
+  height: 2rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+  justify-content: space-around;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background-color: #eaecf1;
+  padding: 5px;
+  border-radius: 0.5rem;
+}
+
+.container .comments-reply .reply .main .score-cont img {
+  width: 16px;
+  cursor: pointer;
+}
+
+.container .comments-reply .reply .main .score-cont .score {
+  font-size: large;
+  font-weight: 500;
+  color: #5457b6;
+}
+
+.container .comments-reply .reply .main .user-image {
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 1;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 1;
+  grid-area: 1 / 1 / 2 / 2;
+  width: 32px;
+}
+
+.container .comments-reply .reply .main .username {
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 1;
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 1;
+  grid-area: 1 / 2 / 2 / 3;
+  margin-left: 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.container .comments-reply .reply .main .created-at {
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 1;
+  -ms-grid-column: 3;
+  -ms-grid-column-span: 1;
+  grid-area: 1 / 3 / 2 / 4;
+  margin-left: 0.8rem;
+  font-size: small;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  color: #67727e;
+}
+
+.container .comments-reply .reply .main .reply-icon {
+  -ms-grid-row: 3;
+  -ms-grid-row-span: 1;
+  -ms-grid-column: 4;
+  -ms-grid-column-span: 1;
+  grid-area: 3 / 4 / 4 / 5;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+  justify-content: space-around;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 75px;
+  cursor: pointer;
+}
+
+.container .comments-reply .reply .comment-text {
   width: 100%;
   -ms-grid-row: 2;
   -ms-grid-row-span: 1;
@@ -648,7 +781,7 @@ body {
   }
   .container .comments-generator form {
     -ms-grid-columns: 64px 1fr 150px;
-        grid-template-columns: 64px 1fr 150px;
+    grid-template-columns: 64px 1fr 150px;
     -ms-grid-row: 1;
     grid-row: 1fr;
   }
@@ -668,7 +801,7 @@ body {
     -ms-grid-column-span: 1;
     grid-area: 1 / 2 / 2 / 3;
     -webkit-transform: translateX(-1%);
-            transform: translateX(-1%);
+    transform: translateX(-1%);
   }
   .container .comments-generator form #send-btn {
     width: 150px;
@@ -688,10 +821,10 @@ body {
   }
   .container .comments-reply .reply-one .main {
     height: 20vh;
-    -ms-grid-rows: (1fr)[3];
-        grid-template-rows: repeat(3, 1fr);
-    -ms-grid-columns: (1fr)[8];
-        grid-template-columns: repeat(8, 1fr);
+    -ms-grid-rows: (1fr) [3];
+    grid-template-rows: repeat(3, 1fr);
+    -ms-grid-columns: (1fr) [8];
+    grid-template-columns: repeat(8, 1fr);
   }
   .container .comments-reply .reply-one .main .score-cont {
     -ms-grid-row: 1;
@@ -701,8 +834,8 @@ body {
     grid-area: 1 / 1 / 3 / 2;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
     width: 2rem;
     height: 5rem;
   }
@@ -755,10 +888,10 @@ body {
   }
   .container .comments-reply .reply-two .main {
     height: 20vh;
-    -ms-grid-rows: (1fr)[3];
-        grid-template-rows: repeat(3, 1fr);
-    -ms-grid-columns: (1fr)[8];
-        grid-template-columns: repeat(8, 1fr);
+    -ms-grid-rows: (1fr) [3];
+    grid-template-rows: repeat(3, 1fr);
+    -ms-grid-columns: (1fr) [8];
+    grid-template-columns: repeat(8, 1fr);
   }
   .container .comments-reply .reply-two .main .score-cont {
     -ms-grid-row: 1;
@@ -768,8 +901,8 @@ body {
     grid-area: 1 / 1 / 3 / 2;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
     width: 2rem;
     height: 5rem;
   }
@@ -822,10 +955,10 @@ body {
   }
   .container .comments-reply .reply-two .replies .reply-one {
     height: 20vh;
-    -ms-grid-rows: (1fr)[3];
-        grid-template-rows: repeat(3, 1fr);
-    -ms-grid-columns: (1fr)[8];
-        grid-template-columns: repeat(8, 1fr);
+    -ms-grid-rows: (1fr) [3];
+    grid-template-rows: repeat(3, 1fr);
+    -ms-grid-columns: (1fr) [8];
+    grid-template-columns: repeat(8, 1fr);
   }
   .container .comments-reply .reply-two .replies .reply-one .score-cont {
     -ms-grid-row: 1;
@@ -835,8 +968,8 @@ body {
     grid-area: 1 / 1 / 3 / 2;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
     width: 2rem;
     height: 5rem;
   }
@@ -889,10 +1022,10 @@ body {
   }
   .container .comments-reply .reply-two .replies .reply-two {
     height: 20vh;
-    -ms-grid-rows: (1fr)[3];
-        grid-template-rows: repeat(3, 1fr);
-    -ms-grid-columns: (1fr)[8];
-        grid-template-columns: repeat(8, 1fr);
+    -ms-grid-rows: (1fr) [3];
+    grid-template-rows: repeat(3, 1fr);
+    -ms-grid-columns: (1fr) [8];
+    grid-template-columns: repeat(8, 1fr);
   }
   .container .comments-reply .reply-two .replies .reply-two .score-cont {
     -ms-grid-row: 1;
@@ -902,8 +1035,8 @@ body {
     grid-area: 1 / 1 / 3 / 2;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
     width: 2rem;
     height: 5rem;
   }
@@ -944,6 +1077,73 @@ body {
     grid-area: 1 / 8 / 2 / 9;
   }
   .container .comments-reply .reply-two .replies .reply-two .comment-text {
+    -ms-grid-row: 2;
+    -ms-grid-row-span: 2;
+    -ms-grid-column: 2;
+    -ms-grid-column-span: 7;
+    grid-area: 2 / 2 / 4 / 9;
+    line-height: 1rem;
+    margin-top: 0.5rem;
+    letter-spacing: 0;
+    font-size: 0.9rem;
+  }
+  .container .comments-reply .reply .main {
+    height: 20vh;
+    -ms-grid-rows: (1fr) [3];
+    grid-template-rows: repeat(3, 1fr);
+    -ms-grid-columns: (1fr) [8];
+    grid-template-columns: repeat(8, 1fr);
+  }
+  .container .comments-reply .reply .main .score-cont {
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 2;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 1;
+    grid-area: 1 / 1 / 3 / 2;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    width: 2rem;
+    height: 5rem;
+  }
+  .container .comments-reply .reply .main .score-cont img {
+    width: 10px;
+  }
+  .container .comments-reply .reply .main .score-cont .score {
+    font-size: small;
+  }
+  .container .comments-reply .reply .main .user-image {
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 1;
+    -ms-grid-column: 2;
+    -ms-grid-column-span: 1;
+    grid-area: 1 / 2 / 2 / 3;
+  }
+  .container .comments-reply .reply .main .username {
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 1;
+    -ms-grid-column: 3;
+    -ms-grid-column-span: 1;
+    grid-area: 1 / 3 / 2 / 4;
+    margin-left: -60px;
+  }
+  .container .comments-reply .reply .main .created-at {
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 1;
+    -ms-grid-column: 4;
+    -ms-grid-column-span: 1;
+    grid-area: 1 / 4 / 2 / 5;
+    width: 5rem;
+  }
+  .container .comments-reply .reply .main .reply-icon {
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 1;
+    -ms-grid-column: 8;
+    -ms-grid-column-span: 1;
+    grid-area: 1 / 8 / 2 / 9;
+  }
+  .container .comments-reply .reply .main .comment-text {
     -ms-grid-row: 2;
     -ms-grid-row-span: 2;
     -ms-grid-column: 2;
