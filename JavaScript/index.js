@@ -163,3 +163,9 @@ function getCurrentDate() {
   let years = String(currentDate.getFullYear());
   return `${days}/${months}/${years}`;
 }
+
+function getUserName(ele) {
+  const parentSibling = ele.parentElement.parentElement.previousSibling;
+  let userName = parentSibling.querySelector(".username").textContent;
+  return userName;
+}
