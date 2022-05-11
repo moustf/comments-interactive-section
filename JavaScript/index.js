@@ -74,15 +74,22 @@ fetch("../data.json")
     replyCommentP2.textContent += info.comments[1].replies[1].content;
   });
 
+// ? Targeting the send button element.
 const sendBtn = document.getElementById("send-btn");
 
+// ? Added and click event listener to the send button.
 sendBtn.addEventListener("click", (e) => {
   e.preventDefault();
 
-  addToPage(true);
+  addToPage(true, commentsTextInput.value);
 });
 
-function addToPage(isComment) {
+// ? Creating the array which will contains the comments text.
+let commentsText = [];
+
+// ? Creating the function which is responsible for add the new comment to the dom tree and render it in
+// ? the page.
+function addToPage(isComment, text) {
   fetch("../data.json")
     .then((data) => data.json())
     .then((info) => {
@@ -144,18 +151,25 @@ function addToPage(isComment) {
       commentText.className = "comment-text";
       mainDiv.appendChild(commentText);
 
+      // ? Adding the comment text to the comments text array.
+      commentsText.push(text);
       if (isComment) {
-        commentText.innerText = commentsTextInput.value;
+        // ? If the new comment is a primary comment, just add the text to the p element.
+        commentText.innerText = text;
       } else {
+        // ? if the new comment is a reply, then add a span for the replied to username and call the
+        // ? getUserName function.
         const repliedTo = document.createElement("span");
         repliedTo.className = "replied-to";
         repliedTo.textContent = getUserName(repliedTo);
         commentText.innerText = commentsTextInput.value;
       }
       commentsTextInput.value = "";
+      addToLocalStorage(commentsText);
     });
 }
 
+// ? Creating the function which is responsible for getting the current date.
 function getCurrentDate() {
   let currentDate = new Date();
   let days = String(currentDate.getDate()).padStart(2, "0");
@@ -164,8 +178,27 @@ function getCurrentDate() {
   return `${days}/${months}/${years}`;
 }
 
+// ? Creating the function which is responsible for getting the username of the person whom the current user
+// ? replied to.
 function getUserName(ele) {
   const parentSibling = ele.parentElement.parentElement.previousSibling;
   let userName = parentSibling.querySelector(".username").textContent;
   return userName;
 }
+
+// ? Creating the function which is responsible for adding the comment to the local storage.
+function addToLocalStorage(commentText) {
+  window.localStorage.setItem("commentsArr", JSON.stringify(commentText));
+}
+
+// ? Creating the function which is responsible for getting items from local storage and render it in the page.
+function fromLSToPage() {
+  if (localStorage.getItem("commentsArr")) {
+    let commentsArr = JSON.parse(localStorage.getItem("commentsArr"));
+    commentsArr.forEach((text) => {
+      addToPage(true, text);
+    });
+  }
+}
+
+fromLSToPage();
