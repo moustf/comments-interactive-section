@@ -10,6 +10,7 @@
 
 @mixin outerReplyMobile {
   display: flex;
+  flex-direction: column;
   margin: 1rem 0.5rem;
 }
 
@@ -316,6 +317,52 @@ body {
       }
     }
   }
+  .replies {
+    width: 96%;
+    .replies-input-div {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      width: 100%;
+      height: 10vh;
+      background-color: #{$white};
+      margin-top: 0.5rem;
+      border-radius: 0.5rem;
+      display: none;
+      img {
+        width: 32px;
+      }
+      input {
+        width: 60%;
+        height: 6vh;
+        border-radius: 0.5rem;
+        padding: 1rem;
+        border-color: #{$light-Gray};
+        &:focus {
+          border-color: black;
+          outline: none;
+        }
+      }
+      button {
+        width: 18%;
+        height: 4vh;
+        background-color: #{$moderate-Blue};
+        color: #{$white};
+        border: none;
+        border-radius: 0.5rem;
+        cursor: pointer;
+        align-self: flex-start;
+        margin-top: 1rem;
+        &:hover {
+          background-color: #{$light-Grayish-Blue};
+        }
+      }
+    }
+    .reply-two .replies .replies-input-div {
+      width: 95%;
+      margin-left: 0.5rem;
+    }
+  }
 }
 
 /* Starting the styling for the big tablet screens and above. */
@@ -550,6 +597,22 @@ body {
           }
         }
       }
+    }
+    .replies .replies-input-div {
+      width: 96%;
+      height: 18vh;
+      input {
+        width: 70%;
+        height: 12vh;
+      }
+      button {
+        height: 5vh;
+        margin-top: 1.5rem;
+      }
+    }
+    .reply-two .replies .replies-input-div {
+      width: 95.7%;
+      margin-left: 0.5rem;
     }
   }
 }
