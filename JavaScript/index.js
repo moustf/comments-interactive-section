@@ -224,8 +224,8 @@ commentsReply.addEventListener("click", (e) => {
 function makeFlex(e) {
   if (
     e.target.className === "reply-icon" ||
-    e.target.localName === "img" ||
-    e.target.localName === "span"
+    e.target.alt === "reply icon" ||
+    e.target.className === "reply-text"
   ) {
     e.target
       .closest(".main")
