@@ -41,6 +41,17 @@ const replyCommentSpan2 = document.querySelector(
   ".replies .reply-two .comment-text .replied-to"
 );
 
+// ? Fetch the data to set the current user's picture in the reply input div's img.
+
+const replyInputImage = document.querySelectorAll(".replies-input-div img");
+for (let i = 0; i < replyInputImage.length; i++) {
+  fetch("../data.json")
+    .then((data) => data.json())
+    .then((info) => {
+      replyInputImage[i].src = info.currentUser.image.png;
+    });
+}
+
 // ? Fetching the data.
 
 fetch("../data.json")
@@ -202,3 +213,43 @@ function fromLSToPage() {
 }
 
 fromLSToPage();
+
+// ? Add an event listener to the commentsReply div to listen to the reply div clicks.
+commentsReply.addEventListener("click", (e) => {
+  makeFlex(e);
+  addFlexToLocalStorage(true);
+});
+
+// ? Create the function which is responsible for making the reply input div visible.
+function makeFlex(e) {
+  if (
+    e.target.className === "reply-icon" ||
+    e.target.localName === "img" ||
+    e.target.localName === "span"
+  ) {
+    e.target
+      .closest(".main")
+      .nextElementSibling.querySelector("div").style.display = "flex";
+  }
+}
+
+// ? Create the function which is responsible for adding the flex boolean value to the local storage to use it later.
+function addFlexToLocalStorage(isFlex) {
+  isFlex
+    ? window.localStorage.setItem("flex", true)
+    : window.localStorage.setItem("flex", false);
+}
+
+// ? Targeting the reply buttons.
+let replyButtons = document.querySelectorAll(".replies-input-div button");
+
+// ? looping over the reply button and listen to the click to do the functionality.
+for (let i = 0; i < replyButtons.length; i++) {
+  replyButtons[i].onclick = function (e) {
+    // addToPage(false, previousElementSibling.value);
+    if (replyButtons[i].previousElementSibling.value.trim() !== "") {
+      e.target.parentElement.style.display = "none";
+      replyButtons[i].previousElementSibling.value = "";
+    }
+  };
+}

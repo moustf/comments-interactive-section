@@ -119,6 +119,10 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
   margin: 1rem 0.5rem;
 }
 
@@ -642,6 +646,10 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
   margin: 1rem 0.5rem;
 }
 
@@ -769,6 +777,66 @@ body {
   color: #67727e;
   letter-spacing: 0.3px;
   line-height: 1.3rem;
+}
+
+.container .replies {
+  width: 96%;
+}
+
+.container .replies .replies-input-div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+  justify-content: space-around;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 100%;
+  height: 10vh;
+  background-color: white;
+  margin-top: 0.5rem;
+  border-radius: 0.5rem;
+  display: none;
+}
+
+.container .replies .replies-input-div img {
+  width: 32px;
+}
+
+.container .replies .replies-input-div input {
+  width: 60%;
+  height: 6vh;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  border-color: #eaecf1;
+}
+
+.container .replies .replies-input-div input:focus {
+  border-color: black;
+  outline: none;
+}
+
+.container .replies .replies-input-div button {
+  width: 18%;
+  height: 4vh;
+  background-color: #5457b6;
+  color: white;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  -ms-flex-item-align: start;
+  align-self: flex-start;
+  margin-top: 1rem;
+}
+
+.container .replies .replies-input-div button:hover {
+  background-color: #c3c4ef;
+}
+
+.container .replies .reply-two .replies .replies-input-div {
+  width: 95%;
+  margin-left: 0.5rem;
 }
 
 /* Starting the styling for the big tablet screens and above. */
@@ -1002,7 +1070,7 @@ body {
     grid-area: 1 / 4 / 2 / 5;
     width: 5rem;
   }
-  .container .comments-reply .reply-two .replies .reply-one .reply-icon {
+  .container .comments-reply .reply-two .replies .reply-one .edit-icon {
     -ms-grid-row: 1;
     -ms-grid-row-span: 1;
     -ms-grid-column: 8;
@@ -1069,7 +1137,7 @@ body {
     grid-area: 1 / 4 / 2 / 5;
     width: 5rem;
   }
-  .container .comments-reply .reply-two .replies .reply-two .reply-icon {
+  .container .comments-reply .reply-two .replies .reply-two .edit-icon {
     -ms-grid-row: 1;
     -ms-grid-row-span: 1;
     -ms-grid-column: 8;
@@ -1153,6 +1221,22 @@ body {
     margin-top: 0.5rem;
     letter-spacing: 0;
     font-size: 0.9rem;
+  }
+  .container .replies .replies-input-div {
+    width: 96%;
+    height: 18vh;
+  }
+  .container .replies .replies-input-div input {
+    width: 70%;
+    height: 12vh;
+  }
+  .container .replies .replies-input-div button {
+    height: 5vh;
+    margin-top: 1.5rem;
+  }
+  .container .reply-two .replies .replies-input-div {
+    width: 95.7%;
+    margin-left: 0.5rem;
   }
 }
 /*# sourceMappingURL=main.css.map */
