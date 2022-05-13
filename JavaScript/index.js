@@ -118,9 +118,11 @@ function addToPage(isComment, text) {
 
       const plusImage = document.createElement("img");
       plusImage.src = "../images/icon-plus.svg";
+      plusImage.classList.add("plus-image");
       plusImage.alt = "plus image";
       const minusImage = document.createElement("img");
       minusImage.src = "../images/icon-minus.svg";
+      plusImage.classList.add("minus-image");
       minusImage.alt = "minus image";
       const scoreP = document.createElement("p");
       scoreP.className = "score";
@@ -253,3 +255,23 @@ for (let i = 0; i < replyButtons.length; i++) {
     }
   };
 }
+
+// ? Targeting the plus images.
+const plusImages = document.querySelectorAll(".plus-image");
+
+// ? Targeting the minus image.
+const minusImages = document.querySelectorAll(".minus-image");
+
+// ? Added the event listener to the commentsReply div to listen to plus and minus images clicks
+commentsReply.addEventListener("click", (e) => {
+  if (e.target.className == "plus-image") {
+    let newScore = Number(e.target.nextElementSibling.textContent) + 1;
+    e.target.nextElementSibling.textContent = newScore;
+    addScoreToLS("data-id", e.target.parentElement.dataset.id, newScore);
+  } else if (e.target.className == "minus-image") {
+    let newScore = Number(e.target.previousElementSibling.textContent) - 1;
+    e.target.previousElementSibling.textContent = newScore;
+    addScoreToLS("data-id", e.target.parentElement.dataset.id, newScore);
+  }
+});
+
