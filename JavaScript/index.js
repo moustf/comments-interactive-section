@@ -292,7 +292,7 @@ function addScoreToLS(dataType, dataId, score) {
         isNotThere = true;
       }
     }
-    if ((isNotThere === false)) {
+    if (isNotThere === false) {
       plusMinusArray.push({ [dataType]: dataId, scoreNum: score });
       window.localStorage.setItem("score", JSON.stringify(plusMinusArray));
     }
@@ -311,3 +311,30 @@ setTimeout(() => {
     });
   }
 }, 800);
+
+// ? Added the event listener to the commentsReply div to listen to the edit div clicks and do the functionality.
+commentsReply.addEventListener("click", (e) => {
+  if (
+    e.target.className === "edit-icon" ||
+    e.target.alt === "edit icon" ||
+    e.target.className === "edit-text"
+  ) {
+    e.target
+      .closest(".edit-icon")
+      .nextElementSibling.setAttribute("contentEditable", "true");
+    e.target.closest(".edit-icon").nextElementSibling.focus();
+    e.target.closest(
+      ".edit-icon"
+    ).nextElementSibling.nextElementSibling.style.display = "block";
+  }
+});
+
+// ? Added the event listener to the commentsReply div to listen to the update button clicks and do the functionality.
+commentsReply.addEventListener("click", (e) => {
+  if ((e.target.className == "update-btn")) {
+    e.target.previousElementSibling.setAttribute("contentEditable", "false");
+    e.target.previousElementSibling.blur();
+    e.target.style.display = "none";
+    
+  }
+});
