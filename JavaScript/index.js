@@ -275,3 +275,23 @@ commentsReply.addEventListener("click", (e) => {
   }
 });
 
+// ? Creating the array of objects for the plus and minus images.
+let plusMinusArray = [];
+
+// ? Adding the score to local storage.
+function addScoreToLS(dataType, dataId, score) {
+  if (plusMinusArray.length === 0) {
+    plusMinusArray.push({ [dataType]: dataId, scoreNum: score });
+    window.localStorage.setItem("score", JSON.stringify(plusMinusArray));
+  } else {
+    plusMinusArray.forEach((obj) => {
+      if (obj[dataType] == dataId) {
+        obj.scoreNum = score;
+        window.localStorage.setItem("score", JSON.stringify(plusMinusArray));
+      } else {
+        plusMinusArray.push({ [dataType]: dataId, scoreNum: score });
+        window.localStorage.setItem("score", JSON.stringify(plusMinusArray));
+      }
+    });
+  }
+}
