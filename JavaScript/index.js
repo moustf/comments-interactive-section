@@ -118,9 +118,11 @@ function addToPage(isComment, text) {
 
       const plusImage = document.createElement("img");
       plusImage.src = "../images/icon-plus.svg";
+      plusImage.classList.add("plus-image");
       plusImage.alt = "plus image";
       const minusImage = document.createElement("img");
       minusImage.src = "../images/icon-minus.svg";
+      plusImage.classList.add("minus-image");
       minusImage.alt = "minus image";
       const scoreP = document.createElement("p");
       scoreP.className = "score";
@@ -253,3 +255,56 @@ for (let i = 0; i < replyButtons.length; i++) {
     }
   };
 }
+
+// ? Targeting the plus images.
+const plusImages = document.querySelectorAll(".plus-image");
+
+// ? Targeting the minus image.
+const minusImages = document.querySelectorAll(".minus-image");
+
+// ? Added the event listener to the commentsReply div to listen to plus and minus images clicks
+commentsReply.addEventListener("click", (e) => {
+  if (e.target.className == "plus-image") {
+    let newScore = Number(e.target.nextElementSibling.textContent) + 1;
+    e.target.nextElementSibling.textContent = newScore;
+    addScoreToLS("data-id", e.target.parentElement.dataset.id, newScore);
+  } else if (e.target.className == "minus-image") {
+    let newScore = Number(e.target.previousElementSibling.textContent) - 1;
+    e.target.previousElementSibling.textContent = newScore;
+    addScoreToLS("data-id", e.target.parentElement.dataset.id, newScore);
+  }
+});
+
+// ? Creating the array of objects for the plus and minus images.
+let plusMinusArray = [];
+
+// ? Adding the score to local storage.
+function addScoreToLS(dataType, dataId, score) {
+  if (plusMinusArray.length === 0) {
+    plusMinusArray.push({ [dataType]: dataId, scoreNum: score });
+    window.localStorage.setItem("score", JSON.stringify(plusMinusArray));
+  } else {
+    plusMinusArray.forEach((obj) => {
+      if (obj[dataType] == dataId) {
+        obj.scoreNum = score;
+        window.localStorage.setItem("score", JSON.stringify(plusMinusArray));
+      } else {
+        plusMinusArray.push({ [dataType]: dataId, scoreNum: score });
+        window.localStorage.setItem("score", JSON.stringify(plusMinusArray));
+      }
+    });
+  }
+}
+
+// ? Checking fi there is anything in the local storage and add it to the page.
+// ? Putting the condition in a set time out to be executed after the fetch is done!
+setTimeout(() => {
+  if (localStorage.getItem("score")) {
+    let arr = JSON.parse(localStorage.getItem("score"));
+    arr.forEach((obj, i) => {
+      document.querySelector(
+        `[data-id='${obj["data-id"]}']`
+      ).children[1].textContent = obj.scoreNum;
+    });
+  }
+}, 800);
