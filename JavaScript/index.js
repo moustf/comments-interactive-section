@@ -280,19 +280,22 @@ let plusMinusArray = [];
 
 // ? Adding the score to local storage.
 function addScoreToLS(dataType, dataId, score) {
+  let isNotThere = false;
   if (plusMinusArray.length === 0) {
     plusMinusArray.push({ [dataType]: dataId, scoreNum: score });
     window.localStorage.setItem("score", JSON.stringify(plusMinusArray));
   } else {
-    plusMinusArray.forEach((obj) => {
-      if (obj[dataType] == dataId) {
-        obj.scoreNum = score;
+    for (let i = 0; i < plusMinusArray.length; i++) {
+      if (plusMinusArray[i][dataType] == dataId) {
+        plusMinusArray[i].scoreNum = score;
         window.localStorage.setItem("score", JSON.stringify(plusMinusArray));
-      } else {
-        plusMinusArray.push({ [dataType]: dataId, scoreNum: score });
-        window.localStorage.setItem("score", JSON.stringify(plusMinusArray));
+        isNotThere = true;
       }
-    });
+    }
+    if ((isNotThere === false)) {
+      plusMinusArray.push({ [dataType]: dataId, scoreNum: score });
+      window.localStorage.setItem("score", JSON.stringify(plusMinusArray));
+    }
   }
 }
 
