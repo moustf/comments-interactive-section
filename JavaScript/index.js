@@ -295,3 +295,16 @@ function addScoreToLS(dataType, dataId, score) {
     });
   }
 }
+
+// ? Checking fi there is anything in the local storage and add it to the page.
+// ? Putting the condition in a set time out to be executed after the fetch is done!
+setTimeout(() => {
+  if (localStorage.getItem("score")) {
+    let arr = JSON.parse(localStorage.getItem("score"));
+    arr.forEach((obj, i) => {
+      document.querySelector(
+        `[data-id='${obj["data-id"]}']`
+      ).children[1].textContent = obj.scoreNum;
+    });
+  }
+}, 800);
