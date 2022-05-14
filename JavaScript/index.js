@@ -292,7 +292,7 @@ function addScoreToLS(dataType, dataId, score) {
         isNotThere = true;
       }
     }
-    if ((isNotThere === false)) {
+    if (isNotThere === false) {
       plusMinusArray.push({ [dataType]: dataId, scoreNum: score });
       window.localStorage.setItem("score", JSON.stringify(plusMinusArray));
     }
@@ -311,3 +311,93 @@ setTimeout(() => {
     });
   }
 }, 800);
+
+let textArr = [];
+
+// ? Added the event listener to the commentsReply div to listen to the edit div clicks and do the functionality.
+commentsReply.addEventListener("click", (e) => {
+  if (
+    e.target.className === "edit-icon" ||
+    e.target.alt === "edit icon" ||
+    e.target.className === "edit-text"
+  ) {
+    // ? When the event occurs, an element is added to the dom tree, so we need to check the order of the elements
+    if (
+      e.target.closest(".edit-icon").nextElementSibling.nextElementSibling
+        .localName == "button"
+    ) {
+      e.target.closest(
+        ".edit-icon"
+      ).nextElementSibling.nextElementSibling.style.display = "block";
+      e.target
+        .closest(".edit-icon")
+        .nextElementSibling.setAttribute("contentEditable", "true");
+      e.target.closest(".edit-icon").nextElementSibling.focus();
+    } else {
+      e.target.closest(
+        ".edit-icon"
+      ).nextElementSibling.nextElementSibling.nextElementSibling.style.display =
+        "block";
+      e.target
+        .closest(".edit-icon")
+        .nextElementSibling.nextElementSibling.setAttribute(
+          "contentEditable",
+          "true"
+        );
+      e.target
+        .closest(".edit-icon")
+        .nextElementSibling.nextElementSibling.focus();
+    }
+  }
+});
+
+// ? Added the event listener to the commentsReply div to listen to the update button clicks and do the functionality.
+commentsReply.addEventListener("click", (e) => {
+  if (e.target.className == "update-btn") {
+    e.target.previousElementSibling.setAttribute("contentEditable", "false");
+    e.target.previousElementSibling.blur();
+    e.target.style.display = "none";
+
+    let text = e.target.previousElementSibling.textContent;
+    let id = e.target.closest(".reply").dataset.reply;
+    setReplyToLS(text, id);
+  }
+});
+
+// ? creating the function which is responsible for adding the text to the local storage.
+function setReplyToLS(text, id) {
+  let isNotThere = false;
+  if (textArr.length === 0) {
+    textArr.push({ "data-reply": id, text: text });
+    window.localStorage.setItem("text", JSON.stringify(textArr));
+  } else {
+    for (let i = 0; i < textArr.length; i++) {
+      if (textArr[i]["data-reply"] == id) {
+        textArr[i].text = text;
+        window.localStorage.setItem("text", JSON.stringify(textArr));
+        isNotThere = true;
+      }
+    }
+    if (isNotThere === false) {
+      textArr.push({ "data-reply": id, text: text });
+      window.localStorage.setItem("text", JSON.stringify(textArr));
+    }
+  }
+}
+
+// ? creating the function which is responsible for taking the replies data from the local storage. 
+function addToPageFormLS() {
+  let textArr = JSON.parse(localStorage.getItem("text"));
+  textArr.forEach((obj) => {
+    document
+      .querySelector(`[data-reply="${obj["data-reply"]}"]`)
+      .querySelector(".comment-text").textContent = obj.text;
+  });
+}
+
+// ? Set a time out to make the check happens after the fetch finishs.
+setTimeout(() => {
+  if (localStorage.getItem("text")) {
+    addToPageFormLS();
+  }
+}, 500);
