@@ -86,7 +86,11 @@ sendBtn.addEventListener("click", (e) => {
 
 // ? Creating the array which will contains the comments text.
 let commentsText = [];
-let dataIdVar = 5;
+
+let dataIdVar = 5; // ? Reply id counter variable.
+
+let currentUserImage, CurrentUserName;
+
 // ? Creating the function which is responsible for add the new comment to the dom tree and render it in
 // ? the page.
 function addToPage(isComment, text) {
@@ -122,15 +126,19 @@ function addToPage(isComment, text) {
       scoreCont.appendChild(scoreP);
       scoreCont.appendChild(minusImage);
 
+      currentUserImage = info.currentUser.image.png;
+
       const userImage = document.createElement("img");
       userImage.className = "user-image";
-      userImage.src = info.currentUser.image.png;
+      userImage.src = currentUserImage;
       userImage.alt = "user image";
       mainDiv.appendChild(userImage);
 
+      CurrentUserName = info.currentUser.username;
+
       const userName = document.createElement("p");
       userName.className = "username";
-      userName.innerText = info.currentUser.username;
+      userName.innerText = CurrentUserName;
       mainDiv.appendChild(userName);
 
       const createdAtP = document.createElement("p");
@@ -166,35 +174,40 @@ function addToPage(isComment, text) {
         const repliedTo = document.createElement("span");
         repliedTo.className = "replied-to";
         repliedTo.textContent = getUserName(repliedTo);
-        commentText.innerText = commentsTextInput.value;
+        commentText.appendChild(repliedTo);
+        commentText.innerText += commentsTextInput.value;
       }
       commentsTextInput.value = "";
       addToLocalStorage(commentsText);
-
-      const repliesDiv = document.createElement("div");
-      repliesDiv.className = "replies";
-      commentSection.appendChild(repliesDiv);
-
-      const replyInputDiv = document.createElement("div");
-      replyInputDiv.className = "replies-input-div";
-      repliesDiv.appendChild(replyInputDiv);
-
-      const replyInputImg = document.createElement("img");
-      replyInputImg.src = "";
-      replyInputImg.alt = "current-user-image";
-      replyInputDiv.appendChild(replyInputImg);
-
-      const replyInputInput = document.createElement("input");
-      replyInputInput.type = "text";
-      replyInputInput.name = "current-user-image";
-      replyInputInput.placeholder = "add your reply ...";
-      replyInputDiv.appendChild(replyInputInput);
-
-      const replyInputBtn = document.createElement("button");
-      replyInputBtn.type = "button";
-      replyInputBtn.textContent = "Reply";
-      replyInputDiv.appendChild(replyInputBtn);
+      createReplyInputDiv();
     });
+}
+
+// ? Creating the function which is responsible for creating the replyInputDiv.
+function createReplyInputDiv() {
+  const repliesDiv = document.createElement("div");
+  repliesDiv.className = "replies";
+  commentSection.appendChild(repliesDiv);
+
+  const replyInputDiv = document.createElement("div");
+  replyInputDiv.className = "replies-input-div";
+  repliesDiv.appendChild(replyInputDiv);
+
+  const replyInputImg = document.createElement("img");
+  replyInputImg.src = "";
+  replyInputImg.alt = "current-user-image";
+  replyInputDiv.appendChild(replyInputImg);
+
+  const replyInputInput = document.createElement("input");
+  replyInputInput.type = "text";
+  replyInputInput.name = "current-user-image";
+  replyInputInput.placeholder = "add your reply ...";
+  replyInputDiv.appendChild(replyInputInput);
+
+  const replyInputBtn = document.createElement("button");
+  replyInputBtn.type = "button";
+  replyInputBtn.textContent = "Reply";
+  replyInputDiv.appendChild(replyInputBtn);
 }
 
 // ? Creating the function which is responsible for getting the current date.
@@ -247,7 +260,7 @@ function makeFlex(e) {
     e.target
       .closest(".main")
       .nextElementSibling.querySelector("div").style.display = "flex";
-      addUserImageToReplyDiv();
+    addUserImageToReplyDiv();
   }
 }
 
@@ -264,9 +277,107 @@ let replyButtons = document.querySelectorAll(".replies-input-div button");
 // ? looping over the reply button and listen to the click to do the functionality.
 for (let i = 0; i < replyButtons.length; i++) {
   replyButtons[i].onclick = function (e) {
+    let textValue = replyButtons[i].previousElementSibling.value;
+    console.log(textValue);
+    const replies = e.target.closest(".replies");
     if (replyButtons[i].previousElementSibling.value.trim() !== "") {
       e.target.parentElement.style.display = "none";
       replyButtons[i].previousElementSibling.value = "";
+
+      const commentOuterDiv = document.createElement("div");
+      commentOuterDiv.className = "reply";
+      replies.appendChild(commentOuterDiv);
+
+      const scoreCont = document.createElement("div");
+      scoreCont.className = "score-cont";
+      scoreCont.setAttribute("data-id", dataIdVar);
+      dataIdVar++;
+      commentOuterDiv.appendChild(scoreCont);
+
+      const plusImage = document.createElement("img");
+      plusImage.src = "../images/icon-plus.svg";
+      plusImage.classList.add("plus-image");
+      plusImage.alt = "plus icon";
+      const minusImage = document.createElement("img");
+      minusImage.src = "../images/icon-minus.svg";
+      minusImage.classList.add("minus-image");
+      minusImage.alt = "minus icon";
+      const scoreP = document.createElement("p");
+      scoreP.className = "score";
+      scoreP.textContent = "0";
+      scoreCont.appendChild(plusImage);
+      scoreCont.appendChild(scoreP);
+      scoreCont.appendChild(minusImage);
+
+      const userImage = document.createElement("img");
+      userImage.className = "user-image";
+      userImage.src = currentUserImage;
+      userImage.alt = "user image";
+      commentOuterDiv.appendChild(userImage);
+
+      const userName = document.createElement("p");
+      userName.className = "username";
+      userName.innerText = CurrentUserName;
+      commentOuterDiv.appendChild(userName);
+
+      const createdAtP = document.createElement("p");
+      createdAtP.className = "created-at";
+      createdAtP.textContent = getCurrentDate();
+      commentOuterDiv.appendChild(createdAtP);
+
+      const editIconDiv = document.createElement("div");
+      editIconDiv.className = "edit-icon";
+      commentOuterDiv.appendChild(editIconDiv);
+
+      const editImg = document.createElement("img");
+      editImg.src = "../images/icon-edit.svg";
+      editImg.alt = "edit icon";
+      editIconDiv.appendChild(editImg);
+
+      const editTextSpan = document.createElement("span");
+      editTextSpan.className = "edit-text";
+      editTextSpan.textContent = "Edit";
+      editIconDiv.appendChild(editTextSpan);
+
+      const commentText = document.createElement("p");
+      commentText.className = "comment-text";
+      commentOuterDiv.appendChild(commentText);
+
+      const repliedTo = document.createElement("span");
+      commentText.appendChild(repliedTo);
+      const parentSibling =
+        repliedTo.parentElement.parentElement.previousElementSibling
+          .parentElement.previousElementSibling;
+      let userName2 = parentSibling.querySelector(".username").textContent;
+      repliedTo.className = "replied-to";
+      repliedTo.textContent = "@" + userName2;
+      const textSpan = document.createElement("span");
+      textSpan.className = "reply-text";
+      textSpan.textContent = textValue;
+      commentText.appendChild(textSpan);
+      textValue = "";
+
+      const updateBtn = document.createElement("button");
+      updateBtn.className = "update-btn";
+      updateBtn.type = "button";
+      updateBtn.textContent = "Update";
+      commentOuterDiv.appendChild(updateBtn);
+
+      const deleteBtn = document.createElement("button");
+      deleteBtn.className = "delete-btn";
+      deleteBtn.type = "button";
+      commentOuterDiv.appendChild(deleteBtn);
+
+      const deleteImg = document.createElement("img");
+      deleteImg.className = "delete-img";
+      deleteImg.src = "../images/icon-delete.svg";
+      deleteImg.alt = "delete button";
+      deleteBtn.appendChild(deleteImg);
+
+      const deleteText = document.createElement("span");
+      deleteText.className = "delete-text";
+      deleteText.textContent = "Delete";
+      deleteBtn.appendChild(deleteText);
     }
   };
 }
