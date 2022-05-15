@@ -274,11 +274,13 @@ function addFlexToLocalStorage(isFlex) {
 // ? Targeting the reply buttons.
 let replyButtons = document.querySelectorAll(".replies-input-div button");
 
+// ? Reply text value array.
+let replyTextValue = [];
+
 // ? looping over the reply button and listen to the click to do the functionality.
 for (let i = 0; i < replyButtons.length; i++) {
   replyButtons[i].onclick = function (e) {
     let textValue = replyButtons[i].previousElementSibling.value;
-    console.log(textValue);
     const replies = e.target.closest(".replies");
     if (replyButtons[i].previousElementSibling.value.trim() !== "") {
       e.target.parentElement.style.display = "none";
@@ -286,6 +288,8 @@ for (let i = 0; i < replyButtons.length; i++) {
 
       const commentOuterDiv = document.createElement("div");
       commentOuterDiv.className = "reply";
+      commentOuterDiv.setAttribute("data-reply", dataIdVar);
+      dataIdVar++;
       replies.appendChild(commentOuterDiv);
 
       const scoreCont = document.createElement("div");
