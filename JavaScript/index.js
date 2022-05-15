@@ -41,17 +41,6 @@ const replyCommentSpan2 = document.querySelector(
   ".replies .reply-two .comment-text .replied-to"
 );
 
-// ? Fetch the data to set the current user's picture in the reply input div's img.
-
-const replyInputImage = document.querySelectorAll(".replies-input-div img");
-for (let i = 0; i < replyInputImage.length; i++) {
-  fetch("../data.json")
-    .then((data) => data.json())
-    .then((info) => {
-      replyInputImage[i].src = info.currentUser.image.png;
-    });
-}
-
 // ? Fetching the data.
 
 fetch("../data.json")
@@ -97,7 +86,7 @@ sendBtn.addEventListener("click", (e) => {
 
 // ? Creating the array which will contains the comments text.
 let commentsText = [];
-
+let dataIdVar = 5;
 // ? Creating the function which is responsible for add the new comment to the dom tree and render it in
 // ? the page.
 function addToPage(isComment, text) {
@@ -114,6 +103,8 @@ function addToPage(isComment, text) {
 
       const scoreCont = document.createElement("div");
       scoreCont.className = "score-cont";
+      scoreCont.setAttribute("data-id", dataIdVar);
+      dataIdVar++;
       mainDiv.appendChild(scoreCont);
 
       const plusImage = document.createElement("img");
@@ -122,7 +113,7 @@ function addToPage(isComment, text) {
       plusImage.alt = "plus image";
       const minusImage = document.createElement("img");
       minusImage.src = "../images/icon-minus.svg";
-      plusImage.classList.add("minus-image");
+      minusImage.classList.add("minus-image");
       minusImage.alt = "minus image";
       const scoreP = document.createElement("p");
       scoreP.className = "score";
@@ -179,6 +170,30 @@ function addToPage(isComment, text) {
       }
       commentsTextInput.value = "";
       addToLocalStorage(commentsText);
+
+      const repliesDiv = document.createElement("div");
+      repliesDiv.className = "replies";
+      commentSection.appendChild(repliesDiv);
+
+      const replyInputDiv = document.createElement("div");
+      replyInputDiv.className = "replies-input-div";
+      repliesDiv.appendChild(replyInputDiv);
+
+      const replyInputImg = document.createElement("img");
+      replyInputImg.src = "";
+      replyInputImg.alt = "current-user-image";
+      replyInputDiv.appendChild(replyInputImg);
+
+      const replyInputInput = document.createElement("input");
+      replyInputInput.type = "text";
+      replyInputInput.name = "current-user-image";
+      replyInputInput.placeholder = "add your reply ...";
+      replyInputDiv.appendChild(replyInputInput);
+
+      const replyInputBtn = document.createElement("button");
+      replyInputBtn.type = "button";
+      replyInputBtn.textContent = "Reply";
+      replyInputDiv.appendChild(replyInputBtn);
     });
 }
 
@@ -213,7 +228,7 @@ function fromLSToPage() {
     });
   }
 }
-
+// ? Calling the function which takes the data from local storage and render it in th page.
 fromLSToPage();
 
 // ? Add an event listener to the commentsReply div to listen to the reply div clicks.
@@ -232,6 +247,7 @@ function makeFlex(e) {
     e.target
       .closest(".main")
       .nextElementSibling.querySelector("div").style.display = "flex";
+      addUserImageToReplyDiv();
   }
 }
 
@@ -248,7 +264,6 @@ let replyButtons = document.querySelectorAll(".replies-input-div button");
 // ? looping over the reply button and listen to the click to do the functionality.
 for (let i = 0; i < replyButtons.length; i++) {
   replyButtons[i].onclick = function (e) {
-    // addToPage(false, previousElementSibling.value);
     if (replyButtons[i].previousElementSibling.value.trim() !== "") {
       e.target.parentElement.style.display = "none";
       replyButtons[i].previousElementSibling.value = "";
@@ -453,4 +468,18 @@ function addDeletedToLS(deletedArr) {
 if (localStorage.getItem("deleted")) {
   let deletedArr = JSON.parse(localStorage.getItem("deleted"));
   deletedArr.forEach((id) => approveDelete(id));
+}
+
+// ? Fetch the data to set the current user's picture in the reply input div's img.
+
+function addUserImageToReplyDiv() {
+  const replyInputImage = document.querySelectorAll(".replies-input-div img");
+  // console.log(replyInputImage);
+  for (let i = 0; i < replyInputImage.length; i++) {
+    fetch("../data.json")
+      .then((data) => data.json())
+      .then((info) => {
+        replyInputImage[i].src = info.currentUser.image.png;
+      });
+  }
 }
