@@ -4,7 +4,7 @@ Interactive comments section where you can update, delete, reply to you comments
 
 ## 📍 Live link to the webpage.
 
-Check it out form **[HERE](https://moustf.github.io/comments-interactive-section/)** or **[HERE](https://comments-interactive-section.vercel.app/)**.
+Check it out form **[HERE](https://comments-interactive-section.vercel.app/)**.
 
 ## 📍 What is this component?
 
@@ -22,8 +22,8 @@ this is an interactive comments-reply component section where you can rate comme
 - - As a user, I should be able to see hover states for all interactive elements on the page.
 - As a user, I should be able to post my thoughts as a comment.
 - As a user, I should be able to up vote and down vote my comments and other people's comments.
-- As a user, I should be able to edit my comments/replys and update them.
-- As a user, I should be able to to delete my comments/replys.
+- As a user, I should be able to edit my comments/replies and update them.
+- As a user, I should be able to to delete my comments/replies.
 - As a user, I should be able to reply to other people's comments.
 
 ## 📍 How to install the project on your local machine:
