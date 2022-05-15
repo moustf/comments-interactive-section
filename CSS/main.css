@@ -839,6 +839,78 @@ body {
   margin-left: 0.5rem;
 }
 
+.container .delete-msg-cont {
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.7);
+  position: absolute;
+  z-index: 20;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: none;
+}
+
+.container .delete-msg-cont .inner-cont {
+  background-color: white;
+  width: 90%;
+  height: 25%;
+  padding: 2rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  gap: 1rem;
+  border-radius: 0.5rem;
+}
+
+.container .delete-msg-cont .inner-cont .heading {
+  color: rgba(0, 0, 0, 0.7);
+}
+
+.container .delete-msg-cont .inner-cont .delete-text {
+  color: #67727e;
+}
+
+.container .delete-msg-cont .inner-cont .buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+  -ms-flex-pack: space-evenly;
+  justify-content: space-evenly;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.container .delete-msg-cont .inner-cont .buttons button {
+  width: 7rem;
+  height: 2.5rem;
+  cursor: pointer;
+  color: white;
+  font-weight: 700;
+  border-radius: 0.5rem;
+  border: none;
+}
+
+.container .delete-msg-cont .inner-cont .buttons button.cancel {
+  background-color: #324152;
+}
+
+.container .delete-msg-cont .inner-cont .buttons button.approve {
+  background-color: #ed6468;
+}
+
 /* Starting the styling for the big tablet screens and above. */
 @media only screen and (min-width: 750px) {
   .container .comments-generator {
@@ -1113,6 +1185,48 @@ body {
   .container .comments-reply .reply-two .replies .reply-one .update-btn:hover {
     background-color: #c3c4ef;
   }
+  .container .comments-reply .reply-two .replies .reply-one .delete-btn {
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 1;
+    -ms-grid-column: 7;
+    -ms-grid-column-span: 1;
+    grid-area: 1 / 7 / 2 / 8;
+    width: 5rem;
+    height: 2rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: space-evenly;
+    -ms-flex-pack: space-evenly;
+    justify-content: space-evenly;
+    -webkit-box-align: start;
+    -ms-flex-align: start;
+    align-items: flex-start;
+    background-color: transparent;
+    border: none;
+    margin-right: 1rem;
+    cursor: pointer;
+  }
+  .container
+    .comments-reply
+    .reply-two
+    .replies
+    .reply-one
+    .delete-btn
+    .delete-img {
+    width: 15px;
+    height: 15px;
+  }
+  .container
+    .comments-reply
+    .reply-two
+    .replies
+    .reply-one
+    .delete-btn
+    .delete-text {
+    color: #ed6468;
+    font-weight: 600;
+  }
   .container .comments-reply .reply-two .replies .reply-two {
     height: 22vh;
     -ms-grid-rows: (1fr) [6];
@@ -1186,6 +1300,48 @@ body {
     margin-top: 0.5rem;
     letter-spacing: 0;
     font-size: 0.9rem;
+  }
+  .container .comments-reply .reply-two .replies .reply-two .delete-btn {
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 1;
+    -ms-grid-column: 7;
+    -ms-grid-column-span: 1;
+    grid-area: 1 / 7 / 2 / 8;
+    width: 5rem;
+    height: 2rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: space-evenly;
+    -ms-flex-pack: space-evenly;
+    justify-content: space-evenly;
+    -webkit-box-align: start;
+    -ms-flex-align: start;
+    align-items: flex-start;
+    background-color: transparent;
+    border: none;
+    margin-right: 1rem;
+    cursor: pointer;
+  }
+  .container
+    .comments-reply
+    .reply-two
+    .replies
+    .reply-two
+    .delete-btn
+    .delete-img {
+    width: 15px;
+    height: 15px;
+  }
+  .container
+    .comments-reply
+    .reply-two
+    .replies
+    .reply-two
+    .delete-btn
+    .delete-text {
+    color: #ed6468;
+    font-weight: 600;
   }
   .container .comments-reply .reply-two .update-btn {
     -ms-grid-row: 4;
@@ -1287,6 +1443,11 @@ body {
   .container .reply-two .replies .replies-input-div {
     width: 95.7%;
     margin-left: 0.5rem;
+  }
+  .container .delete-msg-cont .inner-cont {
+    width: 30%;
+    height: 30vh;
+    gap: 2rem;
   }
 }
 /*# sourceMappingURL=main.css.map */
