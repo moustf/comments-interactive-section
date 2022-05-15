@@ -385,7 +385,7 @@ function setReplyToLS(text, id) {
   }
 }
 
-// ? creating the function which is responsible for taking the replies data from the local storage. 
+// ? creating the function which is responsible for taking the replies data from the local storage.
 function addToPageFormLS() {
   let textArr = JSON.parse(localStorage.getItem("text"));
   textArr.forEach((obj) => {
@@ -401,3 +401,56 @@ setTimeout(() => {
     addToPageFormLS();
   }
 }, 500);
+
+// ? Creating the array in which we will add the data-ids to add them to the local storage.
+let deletedArr = [];
+
+// ? Targeting the delete buttons to hear the click event to each one of them.
+const deleteButtons = document.querySelectorAll(".delete-btn");
+
+let divId; // ? The variable to add the data-reply of the div which just clicked to be deleted.
+
+// ? Loop over the delete button to add event listener to each one of them to listen to delete button clicks.
+deleteButtons.forEach((btn) =>
+  btn.addEventListener("click", (e) => {
+    divId = btn.closest(".reply").dataset.reply;
+    document.querySelector(".delete-msg-cont").style.display = "flex";
+  })
+);
+
+// ? Targeting the cancel and approve buttons inside the delete button container.
+const cancelButtons = document.querySelectorAll(".cancel");
+const approveButtons = document.querySelectorAll(".approve");
+
+// ? Loop over the cancel buttons to cancel the delete process when they are clicked.
+cancelButtons.forEach((btn) =>
+  btn.addEventListener("click", (e) => {
+    document.querySelector(".delete-msg-cont").style.display = "none";
+  })
+);
+
+// ? Loop over the cancel buttons to approve the delete process when they are clicked.
+approveButtons.forEach((btn) =>
+  btn.addEventListener("click", (e) => {
+    approveDelete(divId);
+    addDeletedToLS(deletedArr);
+  })
+);
+
+// ? Creating the function which is responsible for approving the delete process and delete the element.
+function approveDelete(divId) {
+  document.querySelector(`[data-reply="${divId}"]`).remove();
+  document.querySelector(".delete-msg-cont").style.display = "none";
+  deletedArr.push(+divId);
+}
+
+// ? Creating the function which is responsible for adding the deleted array to the local storage.
+function addDeletedToLS(deletedArr) {
+  localStorage.setItem("deleted", JSON.stringify(deletedArr));
+}
+
+// ? Checks if there is deleted key on the local storage, call the function approveDelete() to each one of the data.
+if (localStorage.getItem("deleted")) {
+  let deletedArr = JSON.parse(localStorage.getItem("deleted"));
+  deletedArr.forEach((id) => approveDelete(id));
+}
