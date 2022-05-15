@@ -128,14 +128,14 @@ body {
 
 .container .comments-reply .reply-one .main {
   width: 96%;
-  height: 30vh;
+  height: 38vh;
   padding: 1rem;
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: auto (1fr) [3];
-  grid-template-columns: auto repeat(3, 1fr);
-  -ms-grid-rows: auto 1fr auto;
-  grid-template-rows: auto 1fr auto;
+  -ms-grid-columns: auto (1fr) [4];
+  grid-template-columns: auto repeat(4, 1fr);
+  -ms-grid-rows: auto 1fr auto 1fr;
+  grid-template-rows: auto 1fr auto 1fr;
   row-gap: 0.5rem;
   background-color: white;
   border-radius: 0.5rem;
@@ -218,6 +218,7 @@ body {
   -ms-flex-align: center;
   align-items: center;
   color: #67727e;
+  width: 5rem;
 }
 
 .container .comments-reply .reply-one .main .reply-icon {
@@ -258,14 +259,14 @@ body {
 
 .container .comments-reply .reply-two .main {
   width: 96%;
-  height: 30vh;
+  height: 38vh;
   padding: 1rem;
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: auto (1fr) [3];
-  grid-template-columns: auto repeat(3, 1fr);
-  -ms-grid-rows: auto 1fr auto;
-  grid-template-rows: auto 1fr auto;
+  -ms-grid-columns: auto (1fr) [4];
+  grid-template-columns: auto repeat(4, 1fr);
+  -ms-grid-rows: auto 1fr auto 1fr;
+  grid-template-rows: auto 1fr auto 1fr;
   row-gap: 0.5rem;
   background-color: white;
   border-radius: 0.5rem;
@@ -348,6 +349,7 @@ body {
   -ms-flex-align: center;
   align-items: center;
   color: #67727e;
+  width: 5rem;
 }
 
 .container .comments-reply .reply-two .main .reply-icon {
@@ -390,14 +392,14 @@ body {
 
 .container .comments-reply .reply-two .replies .reply-one {
   width: 96%;
-  height: 30vh;
+  height: 38vh;
   padding: 1rem;
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: auto (1fr) [3];
-  grid-template-columns: auto repeat(3, 1fr);
-  -ms-grid-rows: auto 1fr auto;
-  grid-template-rows: auto 1fr auto;
+  -ms-grid-columns: auto (1fr) [4];
+  grid-template-columns: auto repeat(4, 1fr);
+  -ms-grid-rows: auto 1fr auto 1fr;
+  grid-template-rows: auto 1fr auto 1fr;
   row-gap: 0.5rem;
   background-color: white;
   border-radius: 0.5rem;
@@ -480,6 +482,7 @@ body {
   -ms-flex-align: center;
   align-items: center;
   color: #67727e;
+  width: 5rem;
   margin-left: 0.4rem;
   width: 4.2rem;
 }
@@ -516,16 +519,95 @@ body {
   line-height: 1.3rem;
 }
 
+.container .comments-reply .reply-two .replies .reply-one .edit-icon {
+  -ms-grid-row: 3;
+  -ms-grid-row-span: 1;
+  -ms-grid-column: 4;
+  -ms-grid-column-span: 1;
+  grid-area: 3 / 4 / 4 / 5;
+  cursor: pointer;
+  width: 3rem;
+}
+
+.container .comments-reply .reply-two .replies .reply-one .edit-icon:hover {
+  opacity: 0.5;
+}
+
+.container .comments-reply .reply-two .replies .reply-one .delete-btn {
+  -ms-grid-row: 3;
+  -ms-grid-row-span: 1;
+  -ms-grid-column: 3;
+  -ms-grid-column-span: 1;
+  grid-area: 3 / 3 / 4 / 4;
+  width: 5rem;
+  height: 2rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+  -ms-flex-pack: space-evenly;
+  justify-content: space-evenly;
+  -webkit-box-align: start;
+  -ms-flex-align: start;
+  align-items: flex-start;
+  background-color: transparent;
+  border: none;
+  margin-right: 1rem;
+  cursor: pointer;
+}
+
+.container
+  .comments-reply
+  .reply-two
+  .replies
+  .reply-one
+  .delete-btn
+  .delete-img {
+  width: 15px;
+  height: 15px;
+}
+
+.container
+  .comments-reply
+  .reply-two
+  .replies
+  .reply-one
+  .delete-btn
+  .delete-text {
+  color: #ed6468;
+  font-weight: 600;
+}
+
+.container .comments-reply .reply-two .replies .reply-one .update-btn {
+  -ms-grid-row: 4;
+  -ms-grid-row-span: 1;
+  -ms-grid-column: 3;
+  -ms-grid-column-span: 2;
+  grid-area: 4 / 3 / 5 / 5;
+  height: 2rem;
+  width: 8rem;
+  margin-top: 1rem;
+  color: white;
+  background-color: #5457b6;
+  border: none;
+  border-radius: 0.5rem;
+  display: none;
+}
+
+.container .comments-reply .reply-two .replies .reply-one .update-btn:hover {
+  background-color: #c3c4ef;
+}
+
 .container .comments-reply .reply-two .replies .reply-two {
   width: 96%;
-  height: 30vh;
+  height: 38vh;
   padding: 1rem;
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: auto (1fr) [3];
-  grid-template-columns: auto repeat(3, 1fr);
-  -ms-grid-rows: auto 1fr auto;
-  grid-template-rows: auto 1fr auto;
+  -ms-grid-columns: auto (1fr) [4];
+  grid-template-columns: auto repeat(4, 1fr);
+  -ms-grid-rows: auto 1fr auto 1fr;
+  grid-template-rows: auto 1fr auto 1fr;
   row-gap: 0.5rem;
   background-color: white;
   border-radius: 0.5rem;
@@ -608,6 +690,7 @@ body {
   -ms-flex-align: center;
   align-items: center;
   color: #67727e;
+  width: 5rem;
 }
 
 .container .comments-reply .reply-two .replies .reply-two .reply-icon {
@@ -642,6 +725,84 @@ body {
   line-height: 1.3rem;
 }
 
+.container .comments-reply .reply-two .replies .reply-two .edit-icon {
+  -ms-grid-row: 3;
+  -ms-grid-row-span: 1;
+  -ms-grid-column: 4;
+  -ms-grid-column-span: 1;
+  grid-area: 3 / 4 / 4 / 5;
+  cursor: pointer;
+  width: 3rem;
+}
+
+.container .comments-reply .reply-two .replies .reply-two .edit-icon:hover {
+  opacity: 0.5;
+}
+
+.container .comments-reply .reply-two .replies .reply-two .delete-btn {
+  -ms-grid-row: 3;
+  -ms-grid-row-span: 1;
+  -ms-grid-column: 3;
+  -ms-grid-column-span: 1;
+  grid-area: 3 / 3 / 4 / 4;
+  width: 5rem;
+  height: 2rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+  -ms-flex-pack: space-evenly;
+  justify-content: space-evenly;
+  -webkit-box-align: start;
+  -ms-flex-align: start;
+  align-items: flex-start;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.container
+  .comments-reply
+  .reply-two
+  .replies
+  .reply-two
+  .delete-btn
+  .delete-img {
+  width: 15px;
+  height: 15px;
+}
+
+.container
+  .comments-reply
+  .reply-two
+  .replies
+  .reply-two
+  .delete-btn
+  .delete-text {
+  color: #ed6468;
+  font-weight: 600;
+}
+
+.container .comments-reply .reply-two .replies .reply-two .update-btn {
+  -ms-grid-row: 4;
+  -ms-grid-row-span: 1;
+  -ms-grid-column: 3;
+  -ms-grid-column-span: 2;
+  grid-area: 4 / 3 / 5 / 5;
+  height: 2rem;
+  width: 8rem;
+  margin-top: 1rem;
+  color: white;
+  background-color: #5457b6;
+  border: none;
+  border-radius: 0.5rem;
+  display: none;
+}
+
+.container .comments-reply .reply-two .replies .reply-two .update-btn:hover {
+  background-color: #c3c4ef;
+}
+
 .container .comments-reply .reply {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -655,14 +816,14 @@ body {
 
 .container .comments-reply .reply .main {
   width: 96%;
-  height: 30vh;
+  height: 38vh;
   padding: 1rem;
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: auto (1fr) [3];
-  grid-template-columns: auto repeat(3, 1fr);
-  -ms-grid-rows: auto 1fr auto;
-  grid-template-rows: auto 1fr auto;
+  -ms-grid-columns: auto (1fr) [4];
+  grid-template-columns: auto repeat(4, 1fr);
+  -ms-grid-rows: auto 1fr auto 1fr;
+  grid-template-rows: auto 1fr auto 1fr;
   row-gap: 0.5rem;
   background-color: white;
   border-radius: 0.5rem;
@@ -745,6 +906,7 @@ body {
   -ms-flex-align: center;
   align-items: center;
   color: #67727e;
+  width: 5rem;
 }
 
 .container .comments-reply .reply .main .reply-icon {
