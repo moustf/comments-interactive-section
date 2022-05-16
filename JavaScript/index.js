@@ -179,7 +179,29 @@ function addToPage(isComment, text) {
       }
       commentsTextInput.value = "";
       addToLocalStorage(commentsText);
-      createReplyInputDiv();
+      const repliesDiv = document.createElement("div");
+  repliesDiv.className = "replies";
+  commentSection.appendChild(repliesDiv);
+
+  const replyInputDiv = document.createElement("div");
+  replyInputDiv.className = "replies-input-div";
+  repliesDiv.appendChild(replyInputDiv);
+
+  const replyInputImg = document.createElement("img");
+  replyInputImg.src = "";
+  replyInputImg.alt = "current-user-image";
+  replyInputDiv.appendChild(replyInputImg);
+
+  const replyInputInput = document.createElement("input");
+  replyInputInput.type = "text";
+  replyInputInput.name = "current-user-image";
+  replyInputInput.placeholder = "add your reply ...";
+  replyInputDiv.appendChild(replyInputInput);
+
+  const replyInputBtn = document.createElement("button");
+  replyInputBtn.type = "button";
+  replyInputBtn.textContent = "Reply";
+  replyInputDiv.appendChild(replyInputBtn);
     });
 }
 
