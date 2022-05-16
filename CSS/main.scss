@@ -41,6 +41,7 @@
 @mixin scoreImageMobile {
   width: 16px;
   cursor: pointer;
+  transition: transform 0.5s;
 }
 
 @mixin scoreTextMobile {
@@ -153,6 +154,10 @@ body {
         border-radius: 1rem;
         margin-top: 0.5rem;
         font-size: larger;
+        cursor: pointer;
+        &:hover {
+          opacity: 0.5;
+        }
       }
     }
   }
@@ -173,6 +178,10 @@ body {
           @include soreContMobile();
           img {
             @include scoreImageMobile();
+            &:hover {
+              opacity: 0.8;
+              transform: scale(1.1);
+            }
           }
           .score {
             @include scoreTextMobile();
@@ -189,6 +198,9 @@ body {
         }
         .reply-icon {
           @include reply-iconMobile();
+          &:hover {
+            opacity: 0.5;
+          }
         }
       }
       .comment-text {
@@ -204,6 +216,10 @@ body {
           @include soreContMobile();
           img {
             @include scoreImageMobile();
+            &:hover {
+              opacity: 0.8;
+              transform: scale(1.1);
+            }
           }
           .score {
             @include scoreTextMobile();
@@ -220,6 +236,9 @@ body {
         }
         .reply-icon {
           @include reply-iconMobile();
+          &:hover {
+            opacity: 0.5;
+          }
         }
         .comment-text {
           @include commentsTextMobile();
@@ -235,6 +254,10 @@ body {
             @include soreContMobile();
             img {
               @include scoreImageMobile();
+              &:hover {
+                opacity: 0.8;
+                transform: scale(1.1);
+              }
             }
             .score {
               @include scoreTextMobile();
@@ -276,6 +299,9 @@ body {
             border: none;
             margin-right: 1rem;
             cursor: pointer;
+            &:hover {
+              opacity: 0.5;
+            }
             .delete-img {
               width: 15px;
               height: 15px;
@@ -306,6 +332,10 @@ body {
             @include soreContMobile();
             img {
               @include scoreImageMobile();
+              &:hover {
+                opacity: 0.8;
+                transform: scale(1.1);
+              }
             }
             .score {
               @include scoreTextMobile();
@@ -344,6 +374,9 @@ body {
             background-color: transparent;
             border: none;
             cursor: pointer;
+            &:hover {
+              opacity: 0.5;
+            }
             .delete-img {
               width: 15px;
               height: 15px;
@@ -378,6 +411,10 @@ body {
           @include soreContMobile();
           img {
             @include scoreImageMobile();
+            &:hover {
+              opacity: 0.8;
+              transform: scale(1.1);
+            }
           }
           .score {
             @include scoreTextMobile();
@@ -394,6 +431,9 @@ body {
         }
         .reply-icon {
           @include reply-iconMobile();
+          &:hover {
+            opacity: 0.5;
+          }
         }
       }
       .comment-text {
@@ -407,6 +447,10 @@ body {
         @include soreContMobile();
         img {
           @include scoreImageMobile();
+          &:hover {
+            opacity: 0.8;
+            transform: scale(1.1);
+          }
         }
         .score {
           @include scoreTextMobile();
@@ -425,6 +469,9 @@ body {
       }
       .reply-icon {
         @include reply-iconMobile();
+        &:hover {
+          opacity: 0.5;
+        }
       }
       .comment-text {
         @include commentsTextMobile();
@@ -452,6 +499,9 @@ body {
         border: none;
         margin-right: 1rem;
         cursor: pointer;
+        &:hover {
+          opacity: 0.5;
+        }
         .delete-img {
           width: 15px;
           height: 15px;
@@ -618,6 +668,7 @@ body {
             height: 5rem;
             & img {
               width: 10px;
+              transition: transform 0.3s;
             }
             .score {
               font-size: small;
@@ -658,6 +709,7 @@ body {
             height: 5rem;
             & img {
               width: 10px;
+              transition: transform 0.3s;
             }
             .score {
               font-size: small;
@@ -697,6 +749,7 @@ body {
               height: 5rem;
               & img {
                 width: 10px;
+                transition: transform 0.3s;
               }
               .score {
                 font-size: small;
@@ -774,6 +827,7 @@ body {
               height: 5rem;
               & img {
                 width: 10px;
+                transition: transform 0.3s;
               }
               .score {
                 font-size: small;
@@ -854,6 +908,7 @@ body {
             height: 5rem;
             & img {
               width: 10px;
+              transition: transform 0.3s;
             }
             .score {
               font-size: small;
@@ -894,6 +949,7 @@ body {
             height: 5rem;
             & img {
               width: 10px;
+              transition: transform 0.3s;
             }
             .score {
               font-size: small;
@@ -936,6 +992,9 @@ body {
             border: none;
             margin-right: 1rem;
             cursor: pointer;
+            &:hover {
+              opacity: 0.5;
+            }
             .delete-img {
               width: 15px;
               height: 15px;
